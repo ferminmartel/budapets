@@ -1,101 +1,124 @@
-/* Estilos generales */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  height: 100%;
-  overflow: hidden;
-}
-
+/* FONDO VIDEO */
 #background-video {
   position: fixed;
   top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%);
   object-fit: cover;
-  opacity: 0.75;
   z-index: -1;
+  opacity: 0.75;
 }
 
-/* Logo */
-.logo {
-  max-width: 300px;
-  height: auto;
-  margin-top: 40px;
-}
-
-/* Contenedor principal */
-.container {
+/* CONTENIDO SUPERPUESTO */
+.overlay {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  padding: 20px;
-  z-index: 1;
+  justify-content: center;
 }
 
-/* Botones */
-.buttons {
+/* LOGO */
+.logo {
+  max-width: 320px;
+  width: 80%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+/* BOTONES */
+.button-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 40px;
-  gap: 20px;
+  gap: 15px;
+  max-width: 600px;
+  margin-bottom: 40px;
 }
 
-button {
+.button-grid button {
   background-color: #EB002A;
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: 12px;
-  padding: 15px 30px;
+  padding: 14px 24px;
   font-size: 18px;
+  border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s;
+  min-width: 160px;
 }
 
-button:hover {
+.button-grid button:hover {
   transform: scale(1.05);
 }
 
-/* Carteles flotantes */
-.floating-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 244, 224, 0.9);
-  color: #000;
+.button-grid a button {
+  background-color: #FFA100;
+}
+
+/* INFO BOX */
+.info-box {
+  background-color: rgba(255, 244, 224, 0.95);
   padding: 30px;
-  border-radius: 16px;
-  width: 90%;
+  border-radius: 20px;
   max-width: 500px;
-  z-index: 100;
-  display: none;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   text-align: center;
 }
 
-.floating-text button {
-  margin-top: 20px;
-  background-color: #EB002A;
+.hidden {
+  display: none;
 }
 
-/* Responsivo */
-@media screen and (max-width: 768px) {
+.info-section {
+  display: none;
+}
+
+.info-section.active {
+  display: block;
+}
+
+.map-button,
+.volver {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #EB002A;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.map-button:hover,
+.volver:hover {
+  background-color: #c30021;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
   .logo {
-    max-width: 200px;
-    margin-top: 20px;
+    max-width: 220px;
   }
 
-  button {
-    padding: 12px 24px;
+  .button-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .button-grid button {
+    min-width: 200px;
     font-size: 16px;
   }
 
-  .buttons {
-    flex-direction: column;
-    align-items: center;
+  .info-box {
+    padding: 20px;
   }
 }
