@@ -7,41 +7,30 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <video id="bgVideo" autoplay muted loop playsinline>
+  <video autoplay muted loop playsinline id="background-video">
     <source src="videobuda.mp4" type="video/mp4" />
   </video>
 
-  <audio id="bgMusic" autoplay loop>
+  <audio autoplay loop id="background-audio">
     <source src="pepe.mp3" type="audio/mpeg" />
   </audio>
 
-  <div class="container">
-    <img src="Logo-completo-blanco.png" alt="Budapets Logo" class="logo" />
-    <div class="buttons">
+  <div class="overlay">
+    <img src="Logo-completo-blanco.png" alt="Budapets" class="logo" />
+    <div class="button-grid">
       <button onclick="showSection('quienes')">Quiénes somos</button>
       <button onclick="showSection('que')">Qué hacemos</button>
       <button onclick="showSection('donde')">Dónde estamos</button>
-      <a href="https://wa.me/message/5EQRISV2GSYWL1" target="_blank"><button>WhatsApp</button></a>
-      <a href="https://www.instagram.com/somos.budapets" target="_blank"><button>Instagram</button></a>
+      <button onclick="window.open('https://wa.me/message/5EQRISV2GSYWL1', '_blank')">WhatsApp</button>
+      <button onclick="window.open('https://www.instagram.com/somos.budapets', '_blank')">Instagram</button>
     </div>
   </div>
 
-  <div id="sectionContainer" class="hidden">
-    <div class="section-content" id="quienes">
-      <h2>Quiénes somos</h2>
-      <p>Somos Budapets, una tienda de mascotas premium ubicada en Córdoba.</p>
-      <button onclick="goBack()">Volver</button>
-    </div>
-    <div class="section-content" id="que">
-      <h2>Qué hacemos</h2>
-      <p>Ofrecemos alimentos premium, accesorios y baño para perros con amor.</p>
-      <button onclick="goBack()">Volver</button>
-    </div>
-    <div class="section-content" id="donde">
-      <h2>Dónde estamos</h2>
-      <p>Estamos en Av. Gauss 5308, Córdoba.</p>
-      <a href="https://maps.app.goo.gl/GZ5T9399v75XBtFx6" target="_blank"><button>Abrir en Google Maps</button></a>
-      <button onclick="goBack()">Volver</button>
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <p id="modal-text"></p>
+      <a id="maps-link" href="#" target="_blank">Abrir en Google Maps</a>
+      <button onclick="closeModal()">Volver</button>
     </div>
   </div>
 
