@@ -2,55 +2,51 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Budapets | Petshop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budapets</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header con logo -->
   <header>
-    <img src="Logo-completo-blanco.png" alt="Logo Budapets" class="logo" />
-    <nav>
-      <a href="#quienes">Quiénes somos</a>
-      <a href="#quehacemos">Qué hacemos</a>
-      <a href="#donde">Dónde estamos</a>
-      <a href="https://wa.me/message/5EQRISV2GSYWL1" target="_blank">📲 WhatsApp</a>
-      <a href="https://www.instagram.com/somos.budapets" target="_blank">📷 Instagram</a>
-    </nav>
+    <img src="Logo-completo-blanco.png" alt="Budapets Logo" class="logo" />
   </header>
 
-  <!-- Imagen de fondo con perro -->
-  <section class="hero">
-    <img src="pngwing.com.png" alt="Perro feliz" class="dog-img" />
-    <h1>Amor, mimos y alimentos premium 🐶🐱</h1>
-    <p>Todo lo que tu mascota necesita, en un solo lugar.</p>
-  </section>
+  <main>
+    <div class="btn-container">
+      <button onclick="openModal('quienes')">Quiénes somos</button>
+      <button onclick="openModal('quehacemos')">Qué hacemos</button>
+      <button onclick="openModal('donde')">Dónde estamos</button>
+      <a href="https://wa.me/message/5EQRISV2GSYWL1" target="_blank"><button>WhatsApp</button></a>
+      <a href="https://www.instagram.com/somos.budapets" target="_blank"><button>Instagram</button></a>
+    </div>
 
-  <!-- Sección: Quiénes somos -->
-  <section id="quienes">
-    <h2>Quiénes somos</h2>
-    <p>Somos Budapets, una tienda de mascotas de alta gama en Córdoba, especializada en alimentación, bienestar y amor para 🐶 y 🐱. Nos obsesiona el buen trato, los productos de calidad y hacer que cada cliente se sienta parte de la familia.</p>
-  </section>
+    <!-- MODALES -->
+    <div id="modal-quienes" class="modal">
+      <div class="modal-content">
+        <h2>Quiénes somos</h2>
+        <p>Somos Budapets, una tienda de mascotas con baño canino premium y alimentos seleccionados.</p>
+        <button onclick="closeModal('quienes')">Volver</button>
+      </div>
+    </div>
 
-  <!-- Sección: Qué hacemos -->
-  <section id="quehacemos">
-    <h2>Qué hacemos</h2>
-    <p>Vendemos alimentos balanceados premium, snacks naturales, juguetes y accesorios. Además, contamos con servicio de baño y corte para perros, atención personalizada y entregas programadas 🚚.</p>
-  </section>
+    <div id="modal-quehacemos" class="modal">
+      <div class="modal-content">
+        <h2>Qué hacemos</h2>
+        <p>Ofrecemos baño canino, venta de alimentos balanceados y accesorios de alta gama.</p>
+        <button onclick="closeModal('quehacemos')">Volver</button>
+      </div>
+    </div>
 
-  <!-- Sección: Dónde estamos -->
-  <section id="donde">
-    <h2>Dónde estamos</h2>
-    <p>📍 Av. Gauss 5308, Esq. Juan D’alembert. B° Villa Belgrano, Córdoba Capital.</p>
-    <p>🕐 Lunes a viernes de 9:30 a 20:30 hs – Sábados hasta las 13:30 hs</p>
-  </section>
+    <div id="modal-donde" class="modal">
+      <div class="modal-content">
+        <h2>Dónde estamos</h2>
+        <p>Nos encontrás en Av. Gauss 5308, esquina Juan D’alembert, Barrio Villa Belgrano.</p>
+        <a href="https://g.co/kgs/fwpru3z" target="_blank"><button>Abrir en Google Maps</button></a>
+        <button onclick="closeModal('donde')">Volver</button>
+      </div>
+    </div>
+  </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>Seguinos en <a href="https://www.instagram.com/somos.budapets" target="_blank">Instagram</a> o escribinos por <a href="https://wa.me/message/5EQRISV2GSYWL1" target="_blank">WhatsApp</a></p>
-    <p>© 2025 Budapets – Todos los derechos reservados</p>
-  </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
