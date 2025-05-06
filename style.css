@@ -1,76 +1,83 @@
-/* FONDO VIDEO */
+/* Fondo y video */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
 #background-video {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
   opacity: 0.75;
 }
 
-/* CONTENIDO SUPERPUESTO */
 .overlay {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   text-align: center;
   padding: 20px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
-/* LOGO */
+/* Logo */
 .logo {
-  max-width: 320px;
-  width: 80%;
-  height: auto;
+  width: 300px;
+  max-width: 90vw;
   margin-bottom: 30px;
 }
 
-/* BOTONES */
+/* Botones */
 .button-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  max-width: 600px;
-  margin-bottom: 40px;
+  gap: 20px;
+  max-width: 700px;
 }
 
-.button-grid button {
-  background-color: #EB002A;
-  color: #fff;
+.button-grid button,
+.button-grid a button {
+  background-color: #e53935;
+  color: white;
   border: none;
-  padding: 14px 24px;
+  padding: 15px 25px;
   font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s;
-  min-width: 160px;
+  transition: background-color 0.3s ease;
 }
 
-.button-grid button:hover {
-  transform: scale(1.05);
+.button-grid button:hover,
+.button-grid a button:hover {
+  background-color: #c62828;
 }
 
-.button-grid a button {
-  background-color: #FFA100;
-}
-
-/* INFO BOX */
+/* Caja de información */
 .info-box {
-  background-color: rgba(255, 244, 224, 0.95);
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 500px;
-  width: 90%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+  z-index: 10;
 }
 
 .hidden {
@@ -78,47 +85,63 @@
 }
 
 .info-section {
-  display: none;
+  margin-bottom: 30px;
 }
 
-.info-section.active {
-  display: block;
+.info-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-.map-button,
-.volver {
-  margin-top: 20px;
-  padding: 12px 20px;
-  background-color: #EB002A;
+.info-section p {
+  font-size: 20px;
+}
+
+.map-button {
+  background-color: #e53935;
   color: white;
   border: none;
-  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.volver {
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-.map-button:hover,
-.volver:hover {
-  background-color: #c30021;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .logo {
-    max-width: 220px;
-  }
-
+/* Responsive */
+@media (max-width: 768px) {
   .button-grid {
     flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
 
-  .button-grid button {
-    min-width: 200px;
+  .button-grid button,
+  .button-grid a button {
+    width: 80vw;
     font-size: 16px;
+    padding: 12px;
   }
 
-  .info-box {
-    padding: 20px;
+  .logo {
+    width: 220px;
+  }
+
+  .info-section h2 {
+    font-size: 24px;
+  }
+
+  .info-section p {
+    font-size: 18px;
   }
 }
