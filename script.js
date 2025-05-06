@@ -1,13 +1,7 @@
-// Scroll suave al hacer clic en los enlaces internos
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
+function openModal(id) {
+  document.getElementById("modal-" + id).style.display = "block";
+}
 
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
-});
+function closeModal(id) {
+  document.getElementById("modal-" + id).style.display = "none";
+}
