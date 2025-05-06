@@ -1,80 +1,80 @@
-/* Video de fondo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
 #bgVideo {
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   z-index: -1;
   opacity: 0.75;
-  object-fit: cover;
-  background-size: cover;
-  pointer-events: none;
 }
 
-body {
-  margin: 0;
-  font-family: sans-serif;
-  color: white;
+#bgMusic {
+  volume: 0.2;
+}
+
+.container {
   text-align: center;
-  background-color: #000;
+  padding-top: 10vh;
 }
 
-header .logo {
-  width: 220px;
-  margin: 20px auto;
-  display: block;
+.logo {
+  max-width: 350px;
+  margin-bottom: 40px;
 }
 
-.btn-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin: 40px 20px;
-}
-
-button {
-  background-color: #eb002a;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
+.buttons button,
+a button {
+  margin: 10px;
+  padding: 15px 25px;
   font-size: 16px;
+  border: none;
   cursor: pointer;
+  background-color: #ff3d3d;
+  color: white;
+  border-radius: 5px;
 }
 
-button:hover {
-  background-color: #c90024;
-}
-
-.modal {
-  display: none;
+.section {
   position: fixed;
-  z-index: 10;
-  left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.85);
-}
-
-.modal-content {
-  background-color: #fff4e0;
-  color: #000;
-  margin: 15% auto;
-  padding: 20px;
-  border-radius: 12px;
-  width: 80%;
-  max-width: 400px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.modal-content button {
+.section h2 {
+  margin-bottom: 15px;
+}
+
+.section p {
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.section button {
   margin-top: 20px;
-  background-color: #eb002a;
-  color: white;
+}
+
+.hidden {
+  display: none;
 }
