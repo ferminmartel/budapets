@@ -1,40 +1,37 @@
-// Música de fondo
-const audio = new Audio("pepe.mp3");
-audio.volume = 0.5;
-audio.loop = true;
-audio.play().catch(() => {
-  // Algunos navegadores requieren interacción del usuario
-  document.addEventListener("click", () => audio.play(), { once: true });
-});
+// Música de fondo al 50% de volumen
+const music = document.getElementById("bg-music");
+music.volume = 0.5;
 
-// Botones y textos
-const sections = {
-  quienes: "Somos un petshop premium con productos y servicios para tu mascota.",
-  que: "Ofrecemos alimentos balanceados, peluquería canina y asesoramiento personalizado.",
-  donde: "Estamos en AV. GAUSS 5308, Villa Belgrano, Córdoba. ¡Te esperamos!"
-};
+// Mostrar sección
+function showInfo(id) {
+  const infoBox = document.getElementById("info-box");
+  const allSections = document.querySelectorAll(".info-section");
 
-Object.entries(sections).forEach(([id, texto]) => {
-  document.getElementById(id).addEventListener("click", () => {
-    const textBox = document.getElementById("text-box");
-    textBox.innerHTML = `
-      <p>${texto}</p>
-      ${
-        id === "donde"
-          ? '<a href="https://maps.app.goo.gl/GZ5T9399v75XBtFx6" target="_blank"><button>Ver en Google Maps</button></a>'
-          : ""
-      }
-      <button onclick="cerrarTexto()">Volver</button>
-    `;
-    textBox.style.display = "block";
+  infoBox.classList.remove("hidden");
+
+  allSections.forEach((section) => {
+    section.classList.remove("active");
   });
-});
 
-function cerrarTexto() {
-  document.getElementById("text-box").style.display = "none";
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add("active");
+  }
 }
 
-// Loop tipo ping-pong para video
+// Ocultar sección
+function goBack() {
+  const infoBox = document.getElementById("info-box");
+  const allSections = document.querySelectorAll(".info-section");
+
+  infoBox.classList.add("hidden");
+
+  allSections.forEach((section) => {
+    section.classList.remove("active");
+  });
+}
+
+// Loop ping-pong para el video de fondo
 const video = document.getElementById("background-video");
 let reverse = false;
 
