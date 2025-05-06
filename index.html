@@ -7,6 +7,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Video de fondo -->
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="videobuda.mp4" type="video/mp4" />
+    Tu navegador no soporta el video HTML5.
+  </video>
+
+  <!-- Música de fondo -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="pepe.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
   <header>
     <img src="Logo-completo-blanco.png" alt="Budapets Logo" class="logo" />
   </header>
@@ -48,17 +61,11 @@
   </main>
 
   <script src="script.js"></script>
-  <audio id="bgMusic" autoplay loop>
-  <source src="pepe.mp3" type="audio/mpeg" />
-  Tu navegador no soporta audio HTML5.
-</audio>
-
-<script>
-  // Espera a que cargue la página para ajustar el volumen
-  window.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById("bgMusic");
-    audio.volume = 0.2; // volumen al 20%
-  });
-</script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById("bgMusic");
+      if (audio) audio.volume = 0.2;
+    });
+  </script>
 </body>
 </html>
