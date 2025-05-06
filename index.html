@@ -9,28 +9,44 @@
 <body>
   <video autoplay muted loop playsinline id="background-video">
     <source src="videobuda.mp4" type="video/mp4" />
+    Tu navegador no soporta videos HTML5.
   </video>
 
-  <audio autoplay loop id="background-audio">
+  <audio id="bg-music" autoplay loop>
     <source src="pepe.mp3" type="audio/mpeg" />
   </audio>
 
   <div class="overlay">
-    <img src="Logo-completo-blanco.png" alt="Budapets" class="logo" />
+    <img src="Logo-completo-blanco.png" alt="Budapets Logo" class="logo" />
     <div class="button-grid">
-      <button onclick="showSection('quienes')">Quiénes somos</button>
-      <button onclick="showSection('que')">Qué hacemos</button>
-      <button onclick="showSection('donde')">Dónde estamos</button>
-      <button onclick="window.open('https://wa.me/message/5EQRISV2GSYWL1', '_blank')">WhatsApp</button>
-      <button onclick="window.open('https://www.instagram.com/somos.budapets', '_blank')">Instagram</button>
+      <button onclick="showInfo('quienes')">Quiénes somos</button>
+      <button onclick="showInfo('que')">¡Qué hacemos!</button>
+      <button onclick="showInfo('donde')">Dónde estamos</button>
+      <a href="https://wa.me/message/5EQRISV2GSYWL1" target="_blank">
+        <button>WhatsApp</button>
+      </a>
+      <a href="https://www.instagram.com/somos.budapets" target="_blank">
+        <button>Instagram</button>
+      </a>
     </div>
-  </div>
 
-  <div class="modal" id="infoModal">
-    <div class="modal-content">
-      <p id="modal-text"></p>
-      <a id="maps-link" href="#" target="_blank">Abrir en Google Maps</a>
-      <button onclick="closeModal()">Volver</button>
+    <div id="info-box" class="info-box hidden">
+      <div id="quienes" class="info-section">
+        <h2>Quiénes somos</h2>
+        <p>Somos una tienda de mascotas con amor por cada peludo. 🐾</p>
+      </div>
+      <div id="que" class="info-section">
+        <h2>¡Qué hacemos!</h2>
+        <p>Vendemos alimentos balanceados y bañamos con amor. ✨</p>
+      </div>
+      <div id="donde" class="info-section">
+        <h2>Dónde estamos</h2>
+        <p>Estamos en Av. Gauss 5308, Córdoba.</p>
+        <a href="https://maps.app.goo.gl/GZ5T9399v75XBtFx6" target="_blank">
+          <button class="map-button">Abrir en Google Maps</button>
+        </a>
+      </div>
+      <button class="volver" onclick="goBack()">Volver</button>
     </div>
   </div>
 
