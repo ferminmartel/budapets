@@ -1,50 +1,21 @@
-// Música de fondo al 50% de volumen
-const music = document.getElementById("bg-music");
-music.volume = 0.5;
-
-// Mostrar sección
-function showInfo(id) {
+document.addEventListener("DOMContentLoaded", () => {
   const infoBox = document.getElementById("info-box");
-  const allSections = document.querySelectorAll(".info-section");
+  const infoSections = document.querySelectorAll(".info-section");
+  const volverButton = document.querySelector(".volver");
+  const music = document.getElementById("bg-music");
 
-  infoBox.classList.remove("hidden");
+  // Set music volume to 50%
+  music.volume = 0.5;
 
-  allSections.forEach((section) => {
-    section.classList.remove("active");
-  });
+  window.showInfo = (id) => {
+    infoSections.forEach(section => {
+      section.style.display = "none";
+    });
+    document.getElementById(id).style.display = "block";
+    infoBox.classList.remove("hidden");
+  };
 
-  const target = document.getElementById(id);
-  if (target) {
-    target.classList.add("active");
-  }
-}
-
-// Ocultar sección
-function goBack() {
-  const infoBox = document.getElementById("info-box");
-  const allSections = document.querySelectorAll(".info-section");
-
-  infoBox.classList.add("hidden");
-
-  allSections.forEach((section) => {
-    section.classList.remove("active");
-  });
-}
-
-// Loop ping-pong para el video de fondo
-const video = document.getElementById("background-video");
-let reverse = false;
-
-video.addEventListener("timeupdate", () => {
-  if (!reverse && video.currentTime >= video.duration - 0.1) {
-    reverse = true;
-  } else if (reverse && video.currentTime <= 0.1) {
-    reverse = false;
-  }
+  window.goBack = () => {
+    infoBox.classList.add("hidden");
+  };
 });
-
-setInterval(() => {
-  if (reverse) {
-    video.currentTime -= 0.04;
-  }
-}, 40);
