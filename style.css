@@ -1,0 +1,107 @@
+/* Tipografía de Google (parecida a Circular Std) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+  --rojo: #EB002A;
+  --naranja: #FFA100;
+  --lila: #7777C0;
+  --crema: #FFF4E0;
+  --negro: #000000;
+  --texto: #222222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--crema);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--rojo);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 50px;
+}
+
+nav a {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero section */
+.hero {
+  background-color: var(--crema);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.dog-img {
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2em;
+  color: var(--negro);
+}
+
+.hero p {
+  font-size: 1.1em;
+  color: var(--texto);
+}
+
+/* Secciones */
+section {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+section h2 {
+  color: var(--lila);
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+section p {
+  font-size: 1em;
+}
+
+/* Footer */
+footer {
+  background-color: var(--naranja);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
