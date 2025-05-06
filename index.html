@@ -7,65 +7,45 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <!-- Video de fondo -->
   <video autoplay muted loop playsinline id="bgVideo">
     <source src="videobuda.mp4" type="video/mp4" />
-    Tu navegador no soporta el video HTML5.
   </video>
 
-  <!-- Música de fondo -->
-  <audio id="bgMusic" autoplay loop>
-    <source src="pepe.mp3" type="audio/mpeg" />
-    Tu navegador no soporta audio HTML5.
-  </audio>
+  <!-- Audio -->
+  <audio id="bgMusic" src="pepe.mp3" autoplay loop></audio>
 
-  <header>
+  <!-- Contenido principal -->
+  <div class="container">
     <img src="Logo-completo-blanco.png" alt="Budapets Logo" class="logo" />
-  </header>
 
-  <main>
-    <div class="btn-container">
-      <button onclick="openModal('quienes')">Quiénes somos</button>
-      <button onclick="openModal('quehacemos')">Qué hacemos</button>
-      <button onclick="openModal('donde')">Dónde estamos</button>
+    <div class="buttons">
+      <button onclick="showSection('quienes')">Quienes somos</button>
+      <button onclick="showSection('hacemos')">Qué hacemos</button>
+      <button onclick="showSection('donde')">Dónde estamos</button>
       <a href="https://wa.me/message/5EQRISV2GSYWL1" target="_blank"><button>WhatsApp</button></a>
       <a href="https://www.instagram.com/somos.budapets" target="_blank"><button>Instagram</button></a>
     </div>
+  </div>
 
-    <!-- MODALES -->
-    <div id="modal-quienes" class="modal">
-      <div class="modal-content">
-        <h2>Quiénes somos</h2>
-        <p>Somos Budapets, una tienda de mascotas con baño canino premium y alimentos seleccionados.</p>
-        <button onclick="closeModal('quienes')">Volver</button>
-      </div>
+  <!-- Carteles flotantes -->
+  <div id="sectionContainer" class="section hidden">
+    <div id="quienes" class="section-content">
+      <h2>Quiénes somos</h2>
+      <p>Somos Budapets, una tienda de mascotas de alta gama dedicada al cuidado integral de perros y gatos.</p>
     </div>
-
-    <div id="modal-quehacemos" class="modal">
-      <div class="modal-content">
-        <h2>Qué hacemos</h2>
-        <p>Ofrecemos baño canino, venta de alimentos balanceados y accesorios de alta gama.</p>
-        <button onclick="closeModal('quehacemos')">Volver</button>
-      </div>
+    <div id="hacemos" class="section-content">
+      <h2>Qué hacemos</h2>
+      <p>Ofrecemos alimentos balanceados premium, accesorios, y servicio de peluquería canina con los mejores profesionales.</p>
     </div>
-
-    <div id="modal-donde" class="modal">
-      <div class="modal-content">
-        <h2>Dónde estamos</h2>
-        <p>Nos encontrás en Av. Gauss 5308, esquina Juan D’alembert, Barrio Villa Belgrano.</p>
-        <a href="https://g.co/kgs/fwpru3z" target="_blank"><button>Abrir en Google Maps</button></a>
-        <button onclick="closeModal('donde')">Volver</button>
-      </div>
+    <div id="donde" class="section-content">
+      <h2>Dónde estamos</h2>
+      <p>📍 Av. Gauss 5308, esquina Juan D'alembert, Bº Villa Belgrano</p>
+      <a href="https://maps.app.goo.gl/GZ5T9399v75XBtFx6" target="_blank"><button>Abrir en Google Maps</button></a>
     </div>
-  </main>
+    <button onclick="goBack()">Volver</button>
+  </div>
 
   <script src="script.js"></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const audio = document.getElementById("bgMusic");
-      if (audio) audio.volume = 0.2;
-    });
-  </script>
 </body>
 </html>
