@@ -7,43 +7,42 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Video de fondo -->
-  <video autoplay muted loop playsinline id="bgVideo">
+  <video id="bgVideo" autoplay muted loop playsinline>
     <source src="videobuda.mp4" type="video/mp4" />
   </video>
 
-  <!-- Audio -->
-  <audio id="bgMusic" src="pepe.mp3" autoplay loop></audio>
+  <audio id="bgMusic" autoplay loop>
+    <source src="pepe.mp3" type="audio/mpeg" />
+  </audio>
 
-  <!-- Contenido principal -->
   <div class="container">
     <img src="Logo-completo-blanco.png" alt="Budapets Logo" class="logo" />
-
     <div class="buttons">
-      <button onclick="showSection('quienes')">Quienes somos</button>
-      <button onclick="showSection('hacemos')">Qué hacemos</button>
+      <button onclick="showSection('quienes')">Quiénes somos</button>
+      <button onclick="showSection('que')">Qué hacemos</button>
       <button onclick="showSection('donde')">Dónde estamos</button>
       <a href="https://wa.me/message/5EQRISV2GSYWL1" target="_blank"><button>WhatsApp</button></a>
       <a href="https://www.instagram.com/somos.budapets" target="_blank"><button>Instagram</button></a>
     </div>
   </div>
 
-  <!-- Carteles flotantes -->
-  <div id="sectionContainer" class="section hidden">
-    <div id="quienes" class="section-content">
+  <div id="sectionContainer" class="hidden">
+    <div class="section-content" id="quienes">
       <h2>Quiénes somos</h2>
-      <p>Somos Budapets, una tienda de mascotas de alta gama dedicada al cuidado integral de perros y gatos.</p>
+      <p>Somos Budapets, una tienda de mascotas premium ubicada en Córdoba.</p>
+      <button onclick="goBack()">Volver</button>
     </div>
-    <div id="hacemos" class="section-content">
+    <div class="section-content" id="que">
       <h2>Qué hacemos</h2>
-      <p>Ofrecemos alimentos balanceados premium, accesorios, y servicio de peluquería canina con los mejores profesionales.</p>
+      <p>Ofrecemos alimentos premium, accesorios y baño para perros con amor.</p>
+      <button onclick="goBack()">Volver</button>
     </div>
-    <div id="donde" class="section-content">
+    <div class="section-content" id="donde">
       <h2>Dónde estamos</h2>
-      <p>📍 Av. Gauss 5308, esquina Juan D'alembert, Bº Villa Belgrano</p>
+      <p>Estamos en Av. Gauss 5308, Córdoba.</p>
       <a href="https://maps.app.goo.gl/GZ5T9399v75XBtFx6" target="_blank"><button>Abrir en Google Maps</button></a>
+      <button onclick="goBack()">Volver</button>
     </div>
-    <button onclick="goBack()">Volver</button>
   </div>
 
   <script src="script.js"></script>
