@@ -18,11 +18,10 @@
 
   <div class="overlay">
     <img src="Logo-completo-blanco.png" alt="Budapets Logo" class="logo" />
-
     <div class="button-grid">
-      <button onclick="showInfo('quienes')">Quienes somos</button>
-      <button onclick="showInfo('que')">Que hacemos</button>
-      <button onclick="showInfo('donde')">Donde estamos</button>
+      <button onclick="showInfo('quienes')">Quiénes somos</button>
+      <button onclick="showInfo('que')">¡Qué hacemos!</button>
+      <button onclick="showInfo('donde')">Dónde estamos</button>
       <a href="https://wa.me/message/5EQRISV2GSYWL1" target="_blank">
         <button>WhatsApp</button>
       </a>
@@ -32,6 +31,29 @@
     </div>
 
     <div id="info-box" class="info-box hidden">
-      <div id="quienes" class="info-section">
-        <h2>Quienes somos</h2>
-        <p>Somos una tienda de mascotas con amor por cada peludo. 
+      <div id="quienes" class="info-section hidden">
+        <h2>Quiénes somos</h2>
+        <p>Somos una tienda de mascotas con amor por cada peludo. 🐾</p>
+      </div>
+      <div id="que" class="info-section hidden">
+        <h2>¡Qué hacemos!</h2>
+        <p>Vendemos alimentos balanceados y bañamos con amor. ✨</p>
+      </div>
+      <div id="donde" class="info-section hidden">
+        <h2>Dónde estamos</h2>
+        <p>Estamos en Av. Gauss 5308, Córdoba.</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3371.512761051724!2d-64.24708198492557!3d-31.368447581417683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a29b8f5f71f1%3A0xe5fae3b2a4cd7ef!2sAv.%20Gauss%205308%2C%20X5021%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1715029300000!5m2!1ses!2sar"
+          width="100%" height="200" style="border:0; border-radius: 12px; margin: 10px 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <a href="https://maps.app.goo.gl/GZ5T9399v75XBtFx6" target="_blank">
+          <button class="map-button">Abrir en Google Maps</button>
+        </a>
+      </div>
+      <button class="volver" onclick="goBack()">Volver</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
