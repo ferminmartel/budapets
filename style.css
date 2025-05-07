@@ -1,9 +1,11 @@
-/* Fondo y video */
+/* style.css */
+
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
   overflow: hidden;
-  font-family: 'Arial', sans-serif;
 }
 
 #background-video {
@@ -19,129 +21,116 @@ body, html {
 
 .overlay {
   position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 20px;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2;
 }
 
-/* Logo */
 .logo {
   width: 300px;
-  max-width: 90vw;
+  max-width: 90%;
   margin-bottom: 30px;
 }
 
-/* Botones */
 .button-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 700px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 30px;
 }
 
 .button-grid button,
 .button-grid a button {
-  background-color: #e53935;
-  color: white;
+  padding: 15px;
+  font-size: 1.1em;
   border: none;
-  padding: 15px 25px;
-  font-size: 18px;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
+  background-color: #ffffffdd;
+  color: #000;
   transition: background-color 0.3s ease;
 }
 
 .button-grid button:hover,
 .button-grid a button:hover {
-  background-color: #c62828;
+  background-color: #eee;
 }
 
-/* Caja de información */
 .info-box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.95);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 30px;
-  box-sizing: border-box;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffffee;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  width: 400px;
   z-index: 10;
 }
 
-.hidden {
+.info-section {
   display: none;
 }
 
-.info-section {
-  margin-bottom: 30px;
+.info-section.active {
+  display: block;
 }
 
-.info-section h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.info-section p {
-  font-size: 20px;
-}
-
-.map-button {
-  background-color: #e53935;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 10px;
+.hidden {
+  display: none !important;
 }
 
 .volver {
   margin-top: 20px;
-  background-color: black;
-  color: white;
-  border: none;
   padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 10px;
+  font-size: 1em;
+  background-color: #ccc;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .button-grid {
-    flex-direction: column;
-    gap: 10px;
-  }
+.map-button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-  .button-grid button,
-  .button-grid a button {
-    width: 80vw;
-    font-size: 16px;
-    padding: 12px;
+iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .button-grid {
+    grid-template-columns: 1fr;
   }
 
   .logo {
-    width: 220px;
+    width: 80%;
   }
 
-  .info-section h2 {
-    font-size: 24px;
-  }
-
-  .info-section p {
-    font-size: 18px;
+  .info-box {
+    width: 90%;
+    top: 5%;
   }
 }
