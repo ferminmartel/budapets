@@ -1,21 +1,24 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const infoBox = document.getElementById("info-box");
-  const infoSections = document.querySelectorAll(".info-section");
-  const volverButton = document.querySelector(".volver");
-  const music = document.getElementById("bg-music");
+function showInfo(sectionId) {
+  document.querySelectorAll('.info-section').forEach(section => {
+    section.style.display = 'none';
+  });
+  document.getElementById('info-box').classList.remove('hidden');
+  document.getElementById(sectionId).style.display = 'block';
+}
 
-  // Set music volume to 50%
-  music.volume = 0.5;
+function goBack() {
+  document.getElementById('info-box').classList.add('hidden');
+  document.querySelectorAll('.info-section').forEach(section => {
+    section.style.display = 'none';
+  });
+}
 
-  window.showInfo = (id) => {
-    infoSections.forEach(section => {
-      section.style.display = "none";
+window.addEventListener('DOMContentLoaded', () => {
+  const music = document.getElementById('bg-music');
+  if (music) {
+    music.volume = 0.2;
+    music.play().catch(() => {
+      // user interaction might be needed
     });
-    document.getElementById(id).style.display = "block";
-    infoBox.classList.remove("hidden");
-  };
-
-  window.goBack = () => {
-    infoBox.classList.add("hidden");
-  };
+  }
 });
